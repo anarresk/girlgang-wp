@@ -1,53 +1,47 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
+<!DOCTYPE html>
+<html>
 
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<?php wp_head(); ?>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
+    <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
+
+    <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
+<body>
+<div class="body-wrapper">
+    <div class="header">
+        <div class="wrapper">
+            <h1 class="header__title">
+                <a class="header__link" href="<?php echo get_bloginfo('wpurl');?>"><?php echo get_bloginfo('name'); ?></a>
+            </h1>
 
-	<header id="masthead" class="site-header" role="banner">
+            <div class="header__stripe-container">
+                <div class="header__stripes">
+                    <div class="header__stripe header__stripe--manchester">
+                        Manchester
+                    </div>
+                    <div class="header__stripe header__stripe--sheffield">
+                        Sheffield
+                    </div>
+                    <div class="header__stripe header__stripe--leeds">
+                        Leeds
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+    <div class="nav">
+        <div class="wrapper">
+            <ul class="nav__menu">
+                <?php wp_list_pages('&title_li='); ?>
+                <li class="page_item non-wp-page-item"><a href="https://www.etsy.com/uk/shop/GirlGangLeeds">Shop</a></li>
+            </ul>
+        </div>
+    </div>
 
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
-	</header><!-- #masthead -->
-
-	<?php
-	// If a regular post or page, and not the front page, show the featured image.
-	if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) ) :
-		echo '<div class="single-featured-image-header">';
-		the_post_thumbnail( 'twentyseventeen-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
-	endif;
-	?>
-
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
+    <div class="content wrapper">
