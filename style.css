@@ -288,10 +288,22 @@ body {
     min-width: 31.32%;
     margin: 1%;
     background: #eee;
+    background-position: center center;
+    background-size: cover;
 }
 
-.event-item:hover {
-    background: #ccc;
+.event-item::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 75%;
+    width: 100%;
+    background: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0));
+}
+
+.event-item:hover::after {
+    background: linear-gradient(to top, rgba(255,255,255,0.7), rgba(255,255,255,0));
 }
 
 .event-item--manchester:hover::after {
@@ -380,6 +392,7 @@ body {
     text-align: center;
     width: 100%;
     padding: 10px 0;
+    z-index: 1;
 }
 
 .event-item__title {

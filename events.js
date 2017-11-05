@@ -63,6 +63,9 @@ var loadEvents = function () {
 var generateEventAnchor = function (event) {
     var anchor = document.createElement('a');
     anchor.className = 'event-item event-item--' + event.city;
+    if (event.cover) {
+        anchor.style = 'background-image: url("' + event.cover.source + '")';
+    }
     anchor.href = 'https://www.facebook.com/events/' + event.id;
     anchor.innerHTML = '<div class="event-item__stripe-container"><div class="event-item__stripe">'
         + event.city
