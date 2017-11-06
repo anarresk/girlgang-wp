@@ -1,8 +1,13 @@
-<?php get_header(); ?>
+<?php
+get_header();
+echoHeroImageOpeningDiv();
+?>
+    <h2 class="hero__title">Blog</h2>
+    <p class="hero__text">Check out some of the articles by our talented writers across the cities</p>
+</div>
+
 
 <div class="posts">
-    <h2 class="blog__title">Things we've written</h2>
-
     <div class="posts__list--long">
         <?php
         if (have_posts()) :

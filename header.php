@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="wordpress-important-sucks">
 
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@
         <div class="wrapper">
             <ul class="nav__menu">
                 <?php wp_list_pages('&title_li='); ?>
-                <li class="page_item non-wp-page-item"><a href="https://www.etsy.com/uk/shop/GirlGangLeeds">Shop</a></li>
+                <li class="page_item non-wp-page-item"><a href="https://www.etsy.com/uk/shop/GirlGangLeeds" target="_blank">Shop</a></li>
             </ul>
         </div>
     </div>

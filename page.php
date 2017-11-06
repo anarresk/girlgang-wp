@@ -1,8 +1,10 @@
-<?php get_header(); ?>
+<?php
+get_header();
 
-<div class="hero hero--image">
+echoHeroImageOpeningDiv();
+?>
     <h2 class="hero__title">What is a Girl Gang?</h2>
-    <p class="hero__text">Our girl gangs are running events in Sheffield, Manchester, and Leeds which celebrate and platform creativity in women and non-binary people</p>
+    <p class="hero__text"><?php echoPageContent(false) ?></p>
 </div>
 
 <div class="events">
@@ -11,7 +13,7 @@
         <!-- <a class="events__link" href="./events.html"><span>All Events</span></a> -->
     </div>
     <div class="events__list">
-
+        <h3 class="events__list--loading">Loading events</h3>
     </div>
 </div>
 
@@ -34,4 +36,5 @@
     </div>
 </div>
 
+<script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/events.js"></script>
 <?php get_footer(); ?>
